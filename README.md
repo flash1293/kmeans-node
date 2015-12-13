@@ -5,7 +5,7 @@ A javascript implementation of k-means clustering algorithm that include one/two
 <pre><code> npm install kmeans-node </code></pre>
 
 <h2> <a href="#usage">Usage</a> </h2>
-<h3> Kmeans with using an array of objects
+<h3> Kmeans with using an array of objects </h3>
 <p> Possible using this method if points are releated with data, such as grouping coordinates that has certain properties such as shopping malls, cafes, etc .. , can be called by kmeans.object(arrayOfObjects,MeansNumber) </p>
 <pre><code>
 var kmeans = require('kmeans-node');
