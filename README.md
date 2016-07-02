@@ -27,8 +27,8 @@ var array = [1,2,4,8,10,14,18,20];
 var object = kmeans.array(array,4);
 </code></pre>
 
-<h3> Kmeans with using a tow dimentioanl array </h3>
-<p>a two dimentional array clustering as below, can be called by kmeans.array2d(arrayOfObjects,MeansNumber) </p>
+<h3> Kmeans with using a two dimentional array </h3>
+<p>A two dimentional array clustering as below, can be called by kmeans.array2d(arrayOfObjects,MeansNumber) </p>
 <pre><code>
 var array = [[1,2],[3,4],[7,8],[9,10],[13,14],[15,16],[22,23],[24,25]];
 var object = kmeans.array2d(array,4);
