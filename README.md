@@ -1,76 +1,100 @@
 # kmeans-node
-A javascript implementation of k-means clustering algorithm that include one/two dimentional arrays, and supports objects as well for coordinates.
+A javascript implementation of k-means clustering algorithm that includes one/two dimentional arrays, and supports objects with coordinates.
 
-<h2> <a href="#install"> Install </a></h2>
-<pre><code> npm install kmeans-node </code></pre>
+## Install
+You can install kmeans-node using NPM:
 
-<h2> <a href="#usage">Usage</a> </h2>
-<h3> Kmeans with using an array of objects </h3>
-<p> Possible using this method if points are releated with data, such as grouping coordinates that has certain properties such as shopping malls, cafes, etc .. , can be called by kmeans.object(arrayOfObjects,MeansNumber) </p>
-<pre><code>
+```
+npm install kmeans-node
+```
+
+## Usage
+In order to use kmeans-node, you must first import it:
+
+```js
 var kmeans = require('kmeans-node');
-var array = [{x:1,y:2,data:"some data"},
-             {x:3,y:4,data:"some data"},
-             {x:7,y:8,data:"some data"},
-             {x:9,y:10,data:"some data"},
-             {x:13,y:14,data:"some data"},
-             {x:15,y:16,data:"some data"},
-             {x:22,y:23,data:"some data"},
-             {x:24,y:25,data:"some data"}];
-var object = kmeans.object(array,4);
-</code></pre>
+```
 
-<h3> Kmeans with using a one dimentioanl array </h3>
-<p>a one dimentional array clustering as below, can be called by kmeans.array(arrayOfObjects,MeansNumber) </p>
-<pre><code>
-var array = [1,2,4,8,10,14,18,20];
-var object = kmeans.array(array,4);
-</code></pre>
+Once kmeans has been imported, you can call kmeans on several types of data:
+- one-dimensional arrays
+- two-dimensional arrays
+- arrays of objects
 
-<h3> Kmeans with using a two dimentional array </h3>
-<p>A two dimentional array clustering as below, can be called by kmeans.array2d(arrayOfObjects,MeansNumber) </p>
-<pre><code>
-var array = [[1,2],[3,4],[7,8],[9,10],[13,14],[15,16],[22,23],[24,25]];
-var object = kmeans.array2d(array,4);
-</code></pre>
+### One-dimentioanl array
+A one-dimentional array can be clustered by calling `kmeans.array(array, numberOfMeans)`
 
-<h2><a href="#output">Output</a></h2>
-<p> the result output of the clustering is an array of objects, as below descripes the outcome of each method
+```js
+var data = [1,2,4,8,10,14,18,20];
+var kMeansObject = kmeans.array(data, 4);
+```
 
-<h3> Object </h3>
-<pre><code>
-{   
-    x: median of X,
-    y: median of Y,
-    sum: sum of distance,
-    pre: previous distance,
-    sumX: distance of X,
-    sumY: distance of Y,
-    points: array of mean's points 
+### Two-dimentional array
+A two-dimentional array can be clustered by calling `kmeans.array2d(arrayOfArrays, numberOfMeans)`
+
+```js
+var data = [[1,2],[3,4],[7,8],[9,10],[13,14],[15,16],[22,23],[24,25]];
+var kMeansObject = kmeans.array2d(array,4);
+```
+
+### Array of objects
+It is possible to use this method, if points are releated with data. E.g. when grouping coordinates with other properties such as shopping malls, cafes, etc .. The method can be called by `kmeans.object(arrayOfObjects, numberOfMeans)`
+
+```js
+var data = [
+  {x:1,y:2,data:"some data"},
+  {x:3,y:4,data:"some data"},
+  {x:7,y:8,data:"some data"},
+  {x:9,y:10,data:"some data"},
+  {x:13,y:14,data:"some data"},
+  {x:15,y:16,data:"some data"},
+  {x:22,y:23,data:"some data"},
+  {x:24,y:25,data:"some data"}
+];
+var kMeansObject = kmeans.object(array, 4);
+```
+
+## Output
+The result output of clustering is an array of objects. The output structure varies depending on the input data structure.
+
+### One-dimensional array
+```js
+{ 
+  value: "median", 
+  sum: "sum of distance", 
+  pre: "previous distance", 
+  points: "array of mean's points" 
 }
-</code></pre>
+```
 
-<h3> array </h3>
-<pre><code>
-{ value: median, sum: sum of distance, pre: previous distance, points: array of mean's points }
-</code></pre>
-
-<h3> two dimentioanl array </h3>
-<pre><code>
+### Two-dimentioanl array
+```js
 {
-    values: array of length 2 that contains medians,
-    sum: sum of distance,
-    pre: previous distance,
-    sum0: distance of array[0],
-    sum1: distance of array[1],
-    points: array of mean's points 
+  values: "array of length 2 that contains medians",
+  sum: "sum of distance",
+  pre: "previous distance",
+  sum0: "distance of array[0]",
+  sum1: "distance of array[1]",
+  points: "array of mean's points"
 }
-</code></pre>
+```
 
-<h2><a href="#license">License</a></h2>
+### Array of objects
+```js
+{   
+    x: "median of X",
+    y: "median of Y",
+    sum: "sum of distance",
+    pre: "previous distance",
+    sumX: "distance of X",
+    sumY: "distance of Y",
+    points: "array of mean's points" 
+}
+```
+
+## MIT License
 The MIT License (MIT)
 
-Copyright (c) 2015 abdullahshahin
+Copyright (c) 2015 Abdullah Shahin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
