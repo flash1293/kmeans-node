@@ -20,16 +20,16 @@ Once kmeans has been imported, you can call kmeans on several types of data:
 - two-dimensional arrays
 - arrays of objects
 
-### One-dimentioanl array
-A one-dimentional array can be clustered by calling `kmeans.array(array, numberOfMeans)`
+### One-dimensional array
+A one-dimensional array can be clustered by calling `kmeans.array(array, numberOfMeans)`
 
 ```js
 var data = [1,2,4,8,10,14,18,20];
 var kMeansObject = kmeans.array(data, 4);
 ```
 
-### Two-dimentional array
-A two-dimentional array can be clustered by calling `kmeans.array2d(arrayOfArrays, numberOfMeans)`
+### Two-dimensional array
+A two-dimensional array can be clustered by calling `kmeans.array2d(arrayOfArrays, numberOfMeans)`
 
 ```js
 var data = [[1,2],[3,4],[7,8],[9,10],[13,14],[15,16],[22,23],[24,25]];
@@ -66,7 +66,7 @@ The result output of clustering is an array of objects. The output structure var
 }
 ```
 
-### Two-dimentioanl array
+### Two-dimensional array
 ```js
 {
   values: "array of length 2 that contains medians",
